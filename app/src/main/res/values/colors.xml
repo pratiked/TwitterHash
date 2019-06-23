@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00574B</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#2196F3</color>
+
+    <color name="bkgd_edit_text">#FAFAFA</color>
+    <color name="bkgd_search">#F0F0F0</color>
+</resources>
