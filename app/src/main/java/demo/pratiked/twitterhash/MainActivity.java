@@ -202,9 +202,11 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case NEXT_PAGE:
 
+                    int startPosition = mTweetList.size();
+
                     mTweetList.addAll(tweetList);
                     startTimer();
-                    mTweetsAdapter.notifyDataSetChanged();
+                    mTweetsAdapter.notifyItemRangeInserted(startPosition, tweetList.size());
                     break;
                 case NORMAL:
                 default:
