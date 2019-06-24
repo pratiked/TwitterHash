@@ -126,11 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
         String search = edtSearch.getText().toString().trim();
 
-        if (TextUtils.isEmpty(search)){
-            return;
-        }
-
-        if (search.contains("#") || search.contains("@") || search.contains(" ")){
+        if (!isValidSearch(search)){
             Toast.makeText(this, "Invalid Hashtag!", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -160,6 +156,19 @@ public class MainActivity extends AppCompatActivity {
         mTweetsAdapter.notifyDataSetChanged();
         recyclerViewFeed.scrollToPosition(0);
         startTimer();
+    }
+
+    public static boolean isValidSearch(String search){
+
+        if (TextUtils.isEmpty(search)){
+            return false;
+        }
+
+        if (search.contains("#") || search.contains("@") || search.contains(" ")){
+            return false;
+        }
+
+        return true;
     }
 
     private void getTweets(Constants.QUERY_TYPE queryType){
